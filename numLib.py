@@ -1,7 +1,17 @@
-##############################################
+###########################################################
 # numLib, a library for trivial number functions
 # Peter Bernard M. Rupa
-##############################################
+###########################################################
+
+###########################################################
+# numToWords
+#   - converts a given integer to its word form in english
+# 
+# parameters:
+#  input (integer)
+#
+# return value: (string)
+###########################################################
 
 def numToWords(input):
     x = input
@@ -73,6 +83,16 @@ def numToWords(input):
     # stringify list
     return ' '.join(result)
     
+###########################################################
+# wordsToNum
+#   - converts a given number in its word form to integer
+# 
+# parameters:
+#  input (string)
+#
+# return value: (integer)
+###########################################################
+    
 def wordsToNum(input):
     # define keywords
     numbers = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen',' fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
@@ -122,8 +142,31 @@ def wordsToNum(input):
     
     return total
     
+###########################################################
+# wordsToCurrency
+#   - converts the given number in word form to integer and prefixes a currency value
+# 
+# parameters:
+#  input (string)
+#  prefix (string)
+#
+# return value: (string)
+###########################################################
+    
 def wordsToCurrency(input, prefix):
     return prefix + str(wordsToNum(input))
+    
+###########################################################
+# numberDelimited
+#   - converts the given integer to a delimited version, with a given offset
+# 
+# parameters:
+#  input (integer)
+#  delimiter (string)
+#  offset (integer)
+#
+# return value: (string)
+###########################################################
     
 def numberDelimited(input, delimiter, offset):
     # reverse input string
