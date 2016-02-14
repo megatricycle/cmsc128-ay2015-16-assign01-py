@@ -67,14 +67,14 @@ class NumLibTesting(unittest.TestCase):
         self.assertEqual(numLib.numberDelimited(1000021, ',', 3), '1,000,021')
         self.assertEqual(numLib.numberDelimited(100, '!', 2), '1!00')
         self.assertEqual(numLib.numberDelimited(114, '+', 1), '1+1+4')
-        self.assertEqual(numLib.numberDelimited(),150, ',', 3,  '150')
+        self.assertEqual(numLib.numberDelimited(150, ',', 3),  '150')
         self.assertEqual(numLib.numberDelimited(164, ',', 2), '1,64')
         self.assertEqual(numLib.numberDelimited(1234, ',', 3), '1,234')
         self.assertEqual(numLib.numberDelimited(10000, '-', 4), '1-0000')
         self.assertEqual(numLib.numberDelimited(10050, '|', 1), '1|0|0|5|0')
-        self.assertEqual(numLib.numberDelimited(),250000, ',', 3,  '250,000')
+        self.assertEqual(numLib.numberDelimited(250000, ',', 3),  '250,000')
         self.assertEqual(numLib.numberDelimited(500000, '~', 5), '5~00000')
-        self.assertEqual(numLib.numberDelimited(),256186, ',', 3,  '256,186')
+        self.assertEqual(numLib.numberDelimited(256186, ',', 3),  '256,186')
         self.assertEqual(numLib.numberDelimited(46250, '/', 4), '4/6250')
                   
 if __name__ == '__main__':
