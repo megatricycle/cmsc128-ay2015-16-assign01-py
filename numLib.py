@@ -114,6 +114,7 @@ def wordsToNum(input):
         elif (words[i] == 'million'):
             result[-1] *= 1000000
     
+    # get the sum of all items in the result list
     total = 0
     
     for num in result:
@@ -122,7 +123,7 @@ def wordsToNum(input):
     return total
     
 def wordsToCurrency(input, prefix):
-    return
+    return prefix + str(wordsToNum(input));
     
 def numberDelimited(input, delimiter, offset):
     return
