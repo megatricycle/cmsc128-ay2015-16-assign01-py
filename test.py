@@ -42,6 +42,26 @@ class NumLibTesting(unittest.TestCase):
         self.assertEqual(numLib.wordsToNum('five hundred thousand'), 500000)
         self.assertEqual(numLib.wordsToNum('two hundred fifty six thousand one hundred eighty six'), 256186)
         self.assertEqual(numLib.wordsToNum('fourty six thousand two hundred fifty'), 46250)
+        
+    def test_wordsToCurrency(self):
+        self.assertEqual(numLib.wordsToCurrency('one million one', 'USD'), 'USD1000001')
+        self.assertEqual(numLib.wordsToCurrency('zero', 'USD'), 'USD0')
+        self.assertEqual(numLib.wordsToCurrency('one', 'JPY'), 'JPY1')
+        self.assertEqual(numLib.wordsToCurrency('eleven', 'PHP'), 'PHP11')
+        self.assertEqual(numLib.wordsToCurrency('twenty five' , 'PHP'), 'PHP25')
+        self.assertEqual(numLib.wordsToCurrency('fifty', 'USD'), 'USD50')
+        self.assertEqual(numLib.wordsToCurrency('seventy five', 'JPY'), 'JPY75')
+        self.assertEqual(numLib.wordsToCurrency('one hundred', 'JPY'), 'JPY100')
+        self.assertEqual(numLib.wordsToCurrency('one hundred fourteen', 'PHP'), 'PHP114')
+        self.assertEqual(numLib.wordsToCurrency('one hundred fifty', 'USD'), 'USD150')
+        self.assertEqual(numLib.wordsToCurrency('one hundred sixty four', 'USD'), 'USD164')
+        self.assertEqual(numLib.wordsToCurrency('one thousand two hundred thirty four', 'JPY'), 'JPY1234')
+        self.assertEqual(numLib.wordsToCurrency('ten thousand', 'PHP'), 'PHP10000')
+        self.assertEqual(numLib.wordsToCurrency('ten thousand fifty', 'JPY'), 'JPY10050')
+        self.assertEqual(numLib.wordsToCurrency('two hundred fifty thousand', 'USD'), 'USD250000')
+        self.assertEqual(numLib.wordsToCurrency('five hundred thousand', 'USD'), 'USD500000')
+        self.assertEqual(numLib.wordsToCurrency('two hundred fifty six thousand one hundred eighty six', 'PHP'), 'PHP256186')
+        self.assertEqual(numLib.wordsToCurrency('fourty six thousand two hundred fifty', 'JPY'), 'JPY46250')
                   
 if __name__ == '__main__':
     unittest.main()
