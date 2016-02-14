@@ -1,4 +1,4 @@
-# cmsc128-ay2015-16-assign01-py
+# numLib
 numLib, a library for trivial number functions
 
 ## How to use
