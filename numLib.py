@@ -123,7 +123,23 @@ def wordsToNum(input):
     return total
     
 def wordsToCurrency(input, prefix):
-    return prefix + str(wordsToNum(input));
+    return prefix + str(wordsToNum(input))
     
 def numberDelimited(input, delimiter, offset):
-    return
+    # reverse input string
+    x = str(input)[::-1]
+    
+    result = ''
+    
+    for i in range(0, len(x)):
+        # add delimiter if index is divisible by offset
+        if(i % offset == 0 and i != 0):
+            result += delimiter + x[i]
+            
+        else:
+            result += x[i]
+    
+    # reverse result string
+    result = result[::-1]
+    
+    return result
